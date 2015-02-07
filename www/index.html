@@ -36,36 +36,14 @@
                 //document.addEventListener("deviceready", onDeviceReady, false);
             }
 
-        function success(resultArray) {
-
-        alert("Scanned " + resultArray[0] + " code: " + resultArray[1]);
-
-                // NOTE: Scandit SDK Phonegap Plugin Versions 1.* for iOS report
-                // the scanning result as a concatenated string.
-                // Starting with version 2.0.0, the Scandit SDK Phonegap
-                // Plugin for iOS reports the result as an array
-                // identical to the way the Scandit SDK plugin for Android reports results.
-
-                // If you are running the Scandit SDK Phonegap Plugin Version 1.* for iOS,
-                // use the following approach to generate a result array from the string result returned:
-                // resultArray = result.split("|");
-            }
-
-            function failure(error) {
-                alert("Failed: " + error);
-            }
-
-            function scan() {
-                // See below for all available options.
-                cordova.exec(success, failure, "ScanditSDK", "scan",
-                             ["fUpN6CSEEeSBUV8SDj+x2ATObk+3g0j/B05ll43yTF8",
-                              {"beep": true,
-                              "1DScanning" : true,
-                              "2DScanning" : true}]);
-            }
+        
 
             app.initialize();
             </script>
+        
+         <form style="width: 100%; text-align: center;">
+        <input type="button" value="Scan Barcode" onclick="scanner.startScanning()" style="font-size: 40px; width: 300px; height: 50px; margin-top: 100px;"/>
+    </form>
 
         <div align="center" valign="center">
             <input type="button" value="scan" onclick="scan()" style="margin-top: 230px; width: 100px; height: 30px; font-size: 1em"/>
