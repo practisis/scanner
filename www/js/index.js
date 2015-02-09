@@ -1,8 +1,7 @@
 
 function dale(){
-
-   var scanner = cordova.require("com.phonegap.plugins.barcodescanner.barcodescanner");
-   scanner.scan(
+alert("vamos");
+cordova.plugins.barcodeScanner.scan(
       function (result) {
           alert("We got a barcode\n" +
                 "Result: " + result.text + "\n" +
